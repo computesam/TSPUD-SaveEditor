@@ -4,6 +4,10 @@ This is a (very quickly written) save editor for [The Stanley Parable: Ultra Del
 
 ![https://github.com/hyblocker/TSPUD-SaveEditor/blob/master/github/preview.png?raw=true](https://github.com/hyblocker/TSPUD-SaveEditor/blob/master/github/preview.png?raw=true)
 
+![https://github.com/computesam/TSPUD-SaveEditor/blob/master/github/mac&cheese?raw=true](https://github.com/computesam/TSPUD-SaveEditor/blob/master/github/mac&cheese.png?raw=true)
+
+
+
 ## Licenses
 
 This codebase is licensed under [GLPv3](https://github.com/hyblocker/TSPUD-SaveEditor/blob/master/LICENSE).
