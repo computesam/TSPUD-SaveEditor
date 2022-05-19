@@ -18,9 +18,13 @@ public class FBPPConfig
 
     public Action OnLoadError;
 
-    internal string GetSaveFilePath()
+    internal string windows_GetSaveFilePath()
     {
-        return string.IsNullOrEmpty(SaveFilePath) ? Application.persistentDataPath : SaveFilePath;
+        return string.IsNullOrEmpty(SaveFilePath) ? Application.windows_persistentDataPath : SaveFilePath;
+    }
+    internal string parallels_GetSaveFilePath()
+    {
+        return string.IsNullOrEmpty(SaveFilePath) ? Application.parallels_persistentDataPath : SaveFilePath;
     }
 
 }

@@ -120,4 +120,13 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="confirm_richtextbox.Text" xml:space="preserve">
+    <value>Please confirm your Parallels Drive is Connected with drive letter Y 
+Employe 427. I believe this is defualt, however I want to make sure 
+you are not this stupid, because that would be very silly indeed. Can you 
+actually imagine not having your Mac Drive mapped to drive letter Y.
+Stanley, you really are made for only pushing buttons, one simply cannot
+stress enough just how useless you are outside of your job requirements,
+which last time I checked- ohh nevermind.... Enjoy the editor!</value>
+  </data>
 </root>

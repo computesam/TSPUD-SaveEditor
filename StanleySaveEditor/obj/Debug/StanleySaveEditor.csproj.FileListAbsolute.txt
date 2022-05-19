@@ -1,0 +1,12 @@
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\bin\Debug\StanleySaveEditor.exe.config
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\bin\Debug\StanleySaveEditor.exe
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\bin\Debug\StanleySaveEditor.pdb
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\bin\Debug\Newtonsoft.Json.dll
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\bin\Debug\Newtonsoft.Json.xml
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.MainWindow.resources
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.Properties.Resources.resources
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.csproj.GenerateResource.cache
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.csproj.CopyComplete
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.exe
+\\Mac\Home\Desktop\TSPUD-SaveEditor-1.1\StanleySaveEditor\obj\Debug\StanleySaveEditor.pdb

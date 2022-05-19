@@ -16,7 +16,7 @@ namespace StanleySaveEditor
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            openToolStripMenuItem_Click(null, null);
+            
         }
 
         private void jsonTree_AfterSelect(object sender, TreeViewEventArgs e)
@@ -128,28 +128,7 @@ namespace StanleySaveEditor
         #region Menu stuff
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            currentSave = StanleyParableSaveManager.LoadSaveToMemory();
-
-            jsonTree.Nodes.Clear();
-            TreeNode treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.StringData, null);
-            if (treenodeBuffer != null)
-                jsonTree.Nodes.Add(treenodeBuffer);
-
-            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.IntData, null);
-            if (treenodeBuffer != null)
-                jsonTree.Nodes.Add(treenodeBuffer);
-
-            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.FloatData, null);
-            if (treenodeBuffer != null)
-                jsonTree.Nodes.Add(treenodeBuffer);
-
-            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.BoolData, null);
-            if (treenodeBuffer != null)
-                jsonTree.Nodes.Add(treenodeBuffer);
-
-            treenodeBuffer = BuildCacheTreeNode(currentSave.saveData.saveDataCache, null);
-            if (treenodeBuffer != null)
-                jsonTree.Nodes.Add(treenodeBuffer);
+            
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,13 +137,14 @@ namespace StanleySaveEditor
             var gameInstances = Process.GetProcessesByName("The Stanley Parable Ultra Deluxe.exe");
             if (gameInstances.Length > 0)
             {
-                MessageBox.Show("Stanley, you do realize that the game is open, right? Close it!", "Bruh close the game");
+                MessageBox.Show("Stanley, you do realize that the game is open, right? Close it!", "really... close it...");
                 return;
             }
-
+           
             try
             {
-                currentSave.Save();
+                currentSave.ParallelsSave();
+                //currentSave.WindowsSave();
                 MessageBox.Show("Thanks to the power of the Mind Control Facility, we have re-engineered your state of mind, and now you will experience \"the game\" in an entirely new way!", "Attention Employee 427");
             }
             catch(Exception ex)
@@ -177,7 +157,7 @@ namespace StanleySaveEditor
         private void aboutToolStripMenuItem_Click (object sender, EventArgs e)
         {
             MessageBox.Show (
-                "This program was developed by Hyblocker.\nThe Stanley Parable: Ultra Deluxe is Copyright © Crows Crows Crows 2022",
+                "This program was developed by Hyblocker & Modified by Sam\nHyblocker did a great job with the save file reading, he made this very easy to work with\nThe Stanley Parable: Ultra Deluxe is Copyright © Crows Crows Crows 2022",
                 string.Concat ( Enumerable.Repeat ( "THE CREDITS NEVER END ", 24 ) ) );
         }
 
@@ -206,5 +186,73 @@ namespace StanleySaveEditor
         private void splitContainer1_KeyDown(object sender, KeyEventArgs e) => MainWindow_KeyDown(sender, e);
         private void jsonTree_KeyDown(object sender, KeyEventArgs e) => MainWindow_KeyDown(sender, e);
         #endregion
+
+        private void windowsGaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            currentSave = StanleyParableSaveManager.Windows_LoadSaveToMemory();
+
+            jsonTree.Nodes.Clear();
+            TreeNode treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.StringData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.IntData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.FloatData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.BoolData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildCacheTreeNode(currentSave.saveData.saveDataCache, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+        }
+
+        private void parallelsMacGameInstallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Parallels_PopUp.Visible = true;
+            Parallels_PopUp.Enabled = true;
+        }
+
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Confirm_Click(object sender, EventArgs e)
+        {
+            Parallels_PopUp.Visible = false;
+            Parallels_PopUp.Enabled = false;
+
+            currentSave = StanleyParableSaveManager.Parallels_LoadSaveToMemory();
+
+            jsonTree.Nodes.Clear();
+            TreeNode treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.StringData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.IntData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.FloatData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildMiscTreeNode(currentSave.saveDataMisc.BoolData, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+
+            treenodeBuffer = BuildCacheTreeNode(currentSave.saveData.saveDataCache, null);
+            if (treenodeBuffer != null)
+                jsonTree.Nodes.Add(treenodeBuffer);
+        }
     }
 }

@@ -165,7 +165,7 @@ public static class FBPP
         CheckSaveFileExists();
         if (_latestData == null)
         {
-            var saveFileText = File.ReadAllText(GetSaveFilePath());
+            var saveFileText = File.ReadAllText(windows_GetSaveFilePath());
             if (_config.ScrambleSaveData)
             {
                 saveFileText = DataScrambler(saveFileText);
@@ -190,10 +190,10 @@ public static class FBPP
         return _latestData;
     }
 
-    public static string GetSaveFilePath()
+    public static string windows_GetSaveFilePath()
     {
         CheckForInit();
-        return Path.Combine(_config.GetSaveFilePath(), _config.SaveFileName);
+        return Path.Combine(_config.windows_GetSaveFilePath(), _config.SaveFileName);
     }
 
 
@@ -237,7 +237,7 @@ public static class FBPP
     }
     private static void WriteToSaveFile(string data)
     {
-        var tw = new StreamWriter(GetSaveFilePath());
+        var tw = new StreamWriter(windows_GetSaveFilePath());
         if (_config.ScrambleSaveData)
         {
             data = DataScrambler(data);
@@ -261,7 +261,7 @@ public static class FBPP
 
     private static bool DoesSaveFileExist()
     {
-        return File.Exists(GetSaveFilePath());
+        return File.Exists(windows_GetSaveFilePath());
     }
 
     private static void CreateNewSaveFile()

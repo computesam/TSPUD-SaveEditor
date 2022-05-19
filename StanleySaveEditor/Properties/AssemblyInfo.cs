@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("TSP:UD SaveEditor")]
-[assembly: AssemblyCopyright("Copyright © Hyblocker 2022")]
+[assembly: AssemblyCopyright("Copyright © Hyblocker & Sam 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

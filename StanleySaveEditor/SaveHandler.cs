@@ -12,9 +12,13 @@ namespace StanleySaveEditor
     {
         private static StanleyParableSaveContainer currentSave;
 
-        public static void Init()
+        public static void Win_Init()
         {
-            currentSave = StanleyParableSaveManager.LoadSaveToMemory();
+            currentSave = StanleyParableSaveManager.Windows_LoadSaveToMemory();
+        }
+        public static void Mac_Init()
+        {
+            currentSave = StanleyParableSaveManager.Parallels_LoadSaveToMemory();
         }
 
         public static void Save(string path)
@@ -37,7 +41,7 @@ namespace StanleySaveEditor
             var json = File.ReadAllText(path);
             var newSave = JsonConvert.DeserializeObject<StanleyParableSaveContainer>(json);
             currentSave = newSave;
-            currentSave.Save();
+            currentSave.WindowsSave();
         }
     }
 }

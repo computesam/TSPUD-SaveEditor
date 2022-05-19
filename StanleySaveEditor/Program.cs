@@ -19,19 +19,20 @@ namespace StanleySaveEditor
 
             for (int i = 0; i < args.Length; i++)
             {
-                var current = args[i];
+                var Win_current = args[i];
+                var Mac_current = args[i];
 
-                switch(current)
+                switch(Win_current)
                 {
                     case "--import":
                         launchNormally = false;
-                        SaveHandler.Init();
+                        SaveHandler.Win_Init();
                         SaveHandler.Load(string.Join(" ", args).Substring(args[0].Length + 1));
                         Console.WriteLine("Successfully imported save!");
                         break;
                     case "--export":
                         launchNormally = false;
-                        SaveHandler.Init();
+                        SaveHandler.Win_Init();
                         SaveHandler.Save(string.Join(" ", args).Substring(args[0].Length + 1));
                         Console.WriteLine("Successfully exported save!");
                         break;
@@ -39,19 +40,59 @@ namespace StanleySaveEditor
                     case "--help":
                         launchNormally = false;
                         Console.WriteLine($@"NAME:
-{'\t'}{executableTitle} - A save editor for {tspudTitle}
+                            {'\t'}{executableTitle} - A save editor for {tspudTitle}
 
-USAGE:
-{'\t'}{executableTitle} [command]
+                            USAGE:
+                            {'\t'}{executableTitle} [command]
 
-VERSION:
-{'\t'}{Application.ProductVersion}
+                            VERSION:
+                            {'\t'}{Application.ProductVersion}
 
-COMMANDS:
-{'\t'}--help, -h{'\t'}show help (default: false)
-{'\t'}--export path{'\t'}exports the save as a JSON object to the specified path (default: false)
-{'\t'}--import path{'\t'}imports the save from the specified path, and overwrites the current save (default: false)
-{'\t'}--version, v{'\t'}print the version (default: false)");
+                            COMMANDS:
+                            {'\t'}--help, -h{'\t'}show help (default: false)
+                            {'\t'}--export path{'\t'}exports the save as a JSON object to the specified path (default: false)
+                            {'\t'}--import path{'\t'}imports the save from the specified path, and overwrites the current save (default: false)
+                            {'\t'}--version, v{'\t'}print the version (default: false)");
+                        break;
+                    case "-v":
+                    case "--version":
+                        launchNormally = false;
+                        Console.WriteLine($@"{executableTitle} version {Application.ProductVersion}");
+                        break;
+                }
+
+                //Mac
+                switch (Mac_current)
+                {
+                    case "--import":
+                        launchNormally = false;
+                        SaveHandler.Mac_Init();
+                        SaveHandler.Load(string.Join(" ", args).Substring(args[0].Length + 1));
+                        Console.WriteLine("Successfully imported save!");
+                        break;
+                    case "--export":
+                        launchNormally = false;
+                        SaveHandler.Mac_Init();
+                        SaveHandler.Save(string.Join(" ", args).Substring(args[0].Length + 1));
+                        Console.WriteLine("Successfully exported save!");
+                        break;
+                    case "-h":
+                    case "--help":
+                        launchNormally = false;
+                        Console.WriteLine($@"NAME:
+                            {'\t'}{executableTitle} - A save editor for {tspudTitle}
+
+                            USAGE:
+                            {'\t'}{executableTitle} [command]
+
+                            VERSION:
+                            {'\t'}{Application.ProductVersion}
+
+                            COMMANDS:
+                            {'\t'}--help, -h{'\t'}show help (default: false)
+                            {'\t'}--export path{'\t'}exports the save as a JSON object to the specified path (default: false)
+                            {'\t'}--import path{'\t'}imports the save from the specified path, and overwrites the current save (default: false)
+                            {'\t'}--version, v{'\t'}print the version (default: false)");
                         break;
                     case "-v":
                     case "--version":
